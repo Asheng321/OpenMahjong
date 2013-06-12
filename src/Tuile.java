@@ -3,7 +3,7 @@
  *
  * Created on 17/06/2007. Copyright Raphael (synthaxerrors@gmail.com
  *
- * Classe représentant une Tuile
+ * Classe representant une Tuile
  * 
  * This file is part of Open Mahjong.
  * 
@@ -50,7 +50,7 @@ public class Tuile {
 		
 		switch(couleur){
 		case('c'):
-			nom = new String(c+" caractère");
+			nom = new String(c+" caractre");
 			break;
 		case('b'):
 			nom = new String(c+" bambou");

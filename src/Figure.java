@@ -3,7 +3,7 @@
  *
  * Created on 22/08/2007. Copyright Raphael (synthaxerrors@gmail.com
  *
- * Classe repésentant un groupe de tuile faisant un figure (seule, paire, pung, kong, caché/exposé
+ * Classe reposentant un groupe de tuile faisant un figure (seule, paire, pung, kong, cachï¿½/exposï¿½
  * 
  * This file is part of Open Mahjong.
  * 
@@ -79,9 +79,9 @@ public class Figure {
 	public boolean ajoutTuile(Tuile t){
 		if(nbTuile<4){		//il doit y avoir moins de 4 tuile ds la figure
 			if(nbTuile==0){		//si la figure est libre
-				tuile = new Tuile(t);	//on met à jour la tuile de la figure
+				tuile = new Tuile(t);	//on met ï¿½ jour la tuile de la figure
 			}
-			else if(t.nom.compareTo(tuile.nom)!=0){	//sinon la tuile doit être la même que celle de la figure
+			else if(t.nom.compareTo(tuile.nom)!=0){	//sinon la tuile doit ï¿½tre la mï¿½me que celle de la figure
 				return false;
 			}
 			nbTuile++;
@@ -135,18 +135,18 @@ public class Figure {
 		case 'b':
 			if(tuile.chiffre == 1 || tuile.chiffre == 9){
 				if(type == Main.typeFig.PUNG){
-					score = 8;	// pung de 1/9 rond/bamboo/caractères : 8pts
+					score = 8;	// pung de 1/9 rond/bamboo/caractï¿½res : 8pts
 				}
 				else if(type == Main.typeFig.KONG){
-					score = 16;	// kong de 1/9 rond/bamboo/caractères : 16pts
+					score = 16;	// kong de 1/9 rond/bamboo/caractï¿½res : 16pts
 				}
 			}
 			else{
 				if(type == Main.typeFig.PUNG){
-					score = 4;	// pung de autre rond/bamboo/caractères : 4pts
+					score = 4;	// pung de autre rond/bamboo/caractï¿½res : 4pts
 				}
 				else if(type == Main.typeFig.KONG){
-					score = 8;	// kong de autre rond/bamboo/caractères : 8pts
+					score = 8;	// kong de autre rond/bamboo/caractï¿½res : 8pts
 				}
 			}
 			break;
@@ -154,7 +154,7 @@ public class Figure {
 			break;
 		}
 		if(estCache == true && ((type == Main.typeFig.PUNG) ||(type == Main.typeFig.KONG))){
-			score*=2;		//double le score si combi cachée
+			score*=2;		//double le score si combi cachï¿½e
 		}
 		return score;
 	}

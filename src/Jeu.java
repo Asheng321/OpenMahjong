@@ -3,7 +3,7 @@
  *
  * Created on 22/08/2007. Copyright Raphael (synthaxerrors@gmail.com
  *
- * Classe repésentant un jeu de tuiles composé de figures
+ * Classe reporsentant un jeu de tuiles composï¿½ de figures
  * 
  * This file is part of Open Mahjong.
  * 
@@ -44,14 +44,14 @@ public class Jeu {
 	}
 	/**
 	 * ajoute la tuile t dans le jeu
-	 * renvoie la position absolue de la tuile (-1 si pas d'emplacement trouvé)
+	 * renvoie la position absolue de la tuile (-1 si pas d'emplacement trouvï¿½)
 	 */
 	public int ajouteTuile(Tuile t){
 		int index=0;
 		
-		if((index=aTuile(t))<0){ //le joueur ne possede pas déjà cette tuile
+		if((index=aTuile(t))<0){ //le joueur ne possede pas dï¿½jï¿½ cette tuile
 			index=0;
-			while(figures[index].nbTuile>0 && index<13){	//cherche la première figure libre
+			while(figures[index].nbTuile>0 && index<13){	//cherche la premiï¿½re figure libre
 				index++;
 			}
 			if(figures[index].nbTuile>0 && index==13){
@@ -64,8 +64,8 @@ public class Jeu {
 	}
 	
 	/**
-	 * retire la tuile correspondant à la position absolue i dans le jeu
-	 * retourne la tuile retirée
+	 * retire la tuile correspondant ï¿½ la position absolue i dans le jeu
+	 * retourne la tuile retirï¿½e
 	 */
 	public Tuile retireTuile(int i){
 		Tuile t = getTuileFromPos(i);
@@ -140,7 +140,7 @@ public class Jeu {
 	}
 	
 	/**
-	 * retourne le nombre de kong cachés de la couleur demandée dans le jeu
+	 * retourne le nombre de kong cachï¿½s de la couleur demandï¿½e dans le jeu
 	 */
 	public int getNbKongCaches(char couleur){
 		int cpt=0;
@@ -212,7 +212,7 @@ public class Jeu {
 	}
 	
 	/**
-	 * retourne la tuile correspondant à la position absolue pos
+	 * retourne la tuile correspondant ï¿½ la position absolue pos
 	 */
 	public Tuile getTuileFromPos(int pos){
 		for(int i=0; i<tailleMax; i++){
@@ -245,8 +245,8 @@ public class Jeu {
 	}
 	
 	/**
-	 * retourne le numero de la première figure dont le nombre
-	 * de tuile est égale à nb. -1 s'il n'y en a pas
+	 * retourne le numero de la premiï¿½re figure dont le nombre
+	 * de tuile est ï¿½gale ï¿½ nb. -1 s'il n'y en a pas
 	 */
 	public int getFirstFig(int nb, boolean sens){
 		int cpt = -1;
@@ -279,7 +279,7 @@ public class Jeu {
 	}
 	
 	/**
-	 * fontion qui dit si le joueur possede déjà une figure avec la tuile t
+	 * fontion qui dit si le joueur possede dï¿½jï¿½ une figure avec la tuile t
 	 * renvoi le numero de la figure ou -1 si le joueur ne la possede pas 
 	 */
 	public int aTuile(Tuile t){
@@ -293,7 +293,7 @@ public class Jeu {
 	}
 	
 	/**
-	 * fonction qui retourne true si le jeu possède au moins une tuile
+	 * fonction qui retourne true si le jeu possï¿½de au moins une tuile
 	 * de type dragon/vent
 	 */
 	public boolean aHonneur(){
@@ -332,17 +332,17 @@ public class Jeu {
 	}
 	
 	/**
-	 * Petit tri à bulle qui classe en fonction des tuiles
+	 * Petit tri ï¿½ bulle qui classe en fonction des tuiles
 	 */
 	public void triTuile(){
 		Figure temp = new Figure();
 		int i = 0;
 		
-		/* tri de la main cachée */
+		/* tri de la main cachï¿½e */
 		while(i<tailleMax-1){
 //			if(((figures[i].estLibre()) && (!figures[i+1].estLibre()))	// pas de tuile
-//					|| (figures[i].couleur()<figures[i+1].couleur()) 	// ou couleur supérieure à la suivante 
-//					|| (figures[i].couleur()==figures[i+1].couleur() && figures[i].chiffre()<figures[i+1].chiffre())) 	// ou couleur identique et chiffre supérieur
+//					|| (figures[i].couleur()<figures[i+1].couleur()) 	// ou couleur supï¿½rieure ï¿½ la suivante 
+//					|| (figures[i].couleur()==figures[i+1].couleur() && figures[i].chiffre()<figures[i+1].chiffre())) 	// ou couleur identique et chiffre supï¿½rieur
 			if(figures[i].estInferieure(figures[i+1]))
 			{
 				// intervertion des tuiles
@@ -358,14 +358,14 @@ public class Jeu {
 	}
 	
 	/**
-	 * Tri à bulle qui tri les figures en fonction du nombre 
+	 * Tri ï¿½ bulle qui tri les figures en fonction du nombre 
 	 * de tuile de chaque figure
 	 */
 	public void triNumerique(boolean ordre){
 		Figure temp = new Figure();
 		int i = 0;
 		
-		/* tri de la main cachée */
+		/* tri de la main cachï¿½e */
 		while(i<tailleMax-1){
 			if(figures[i].nbTuile<figures[i+1].nbTuile && ordre == Main.DESCENDANT
 					|| figures[i].nbTuile>figures[i+1].nbTuile && ordre == Main.ASCENDANT)
@@ -383,8 +383,8 @@ public class Jeu {
 	}
 	
 	/*
-	 * retourne la couleur de la première tuile trouvée (non honneur)
-	 * 0 sinon (i.e. pur honneurs). Si le jeu est pur (à checker avant), 
+	 * retourne la couleur de la premiï¿½re tuile trouvï¿½e (non honneur)
+	 * 0 sinon (i.e. pur honneurs). Si le jeu est pur (ï¿½ checker avant), 
 	 * donne la couleur du jeu 
 	 */
 	public char couleur(){
@@ -400,8 +400,8 @@ public class Jeu {
 		return coul;
 	}
 	
-	/* retourne true si le jeu n'est composé que de Pung/Kong de tuiles 
-	 * majeures (1/9 rond/bambou/caractère)*/
+	/* retourne true si le jeu n'est composï¿½ que de Pung/Kong de tuiles 
+	 * majeures (1/9 rond/bambou/caractï¿½re)*/
 	public boolean seulmentTuileMaj(){
 		boolean result = true;
 		
@@ -417,7 +417,7 @@ public class Jeu {
 	}
 	
 	/**
-	 * retourne le nombre de figure de la couleur demandée
+	 * retourne le nombre de figure de la couleur demandï¿½e
 	 */
 	public int getNbFigure(Main.typeFig figure, char couleur, boolean kongEgal2Paire){
 		int result = 0;
@@ -426,7 +426,7 @@ public class Jeu {
 			if(figures[i].tuile.couleur == couleur){
 				if(figures[i].type == figure){
 					result ++;
-				}//un kong caché peut compter comme 2 paires
+				}//un kong cachï¿½ peut compter comme 2 paires
 				else if(kongEgal2Paire){ 
 					if(figure == Main.typeFig.PAIRE && figures[i].type==Main.typeFig.KONG && figures[i].estCache){
 						result+=2;
@@ -438,7 +438,7 @@ public class Jeu {
 	}
 	
 	/**
-	 * retourne le nombre de figure correspondant au chiffre et à la couleur demandés
+	 * retourne le nombre de figure correspondant au chiffre et ï¿½ la couleur demandï¿½s
 	 */
 	public int getNbFigure(Main.typeFig figure, int chiffre,char couleur, boolean kongEgal2Paire){
 		int result = 0;
@@ -447,7 +447,7 @@ public class Jeu {
 			if(figures[i].tuile.couleur == couleur && figures[i].tuile.chiffre == chiffre){
 				if(figures[i].type == figure){
 					result ++;
-				}//un kong caché peut compter comme 2 paires
+				}//un kong cachï¿½ peut compter comme 2 paires
 				else if(kongEgal2Paire){ 
 					if(figure == Main.typeFig.PAIRE && figures[i].type==Main.typeFig.KONG && figures[i].estCache){
 						result+=2;
@@ -458,7 +458,7 @@ public class Jeu {
 		return result;
 	}
 	/**
-	 * retourne le nombre de figure demandée
+	 * retourne le nombre de figure demandï¿½e
 	 */
 	public int getNbFigure(Main.typeFig figure, boolean kongEgal2Paire){
 		int result = 0;
@@ -466,7 +466,7 @@ public class Jeu {
 		for(int i=0; i<tailleMax; i++){
 			if(figures[i].type == figure){
 				result ++;
-			}//un kong caché peut compter comme 2 paires
+			}//un kong cachï¿½ peut compter comme 2 paires
 			else if(kongEgal2Paire){ 
 				if(figure == Main.typeFig.PAIRE && figures[i].type==Main.typeFig.KONG && figures[i].estCache){
 					result+=2;
@@ -477,7 +477,7 @@ public class Jeu {
 	}
 	
 	/**
-	 * retourne le nombre de Pung/Kong de la couleur demandée
+	 * retourne le nombre de Pung/Kong de la couleur demandï¿½e
 	 */
 	public int getNbPungKong(char couleur){
 		int result = 0;
@@ -493,7 +493,7 @@ public class Jeu {
 	}
 	
 	/**
-	 * retourne le nombre de Pung/Kong de la couleur et du chiffre demandée
+	 * retourne le nombre de Pung/Kong de la couleur et du chiffre demandï¿½e
 	 */
 	public int getNbPungKong(int chiffre, char couleur){
 		int result = 0;
@@ -538,7 +538,7 @@ public class Jeu {
 	/**
 	 * Test le Mahjong special "Les Paires Venteuses":
 	 * 	- 1 paire de chaque vent
-	 * 	- 1 paire de chaque séries
+	 * 	- 1 paire de chaque sï¿½ries
 	 */
 	public boolean test2PairesVenteuses(){
 		boolean result = false;
@@ -572,8 +572,8 @@ public class Jeu {
 	}
 	/**
 	 * Test le Mahjong special "La Main de Corail":
-	 * 	- 3 pung de caractère
-	 *  - 1 paire de caractère
+	 * 	- 3 pung de caractï¿½re
+	 *  - 1 paire de caractï¿½re
 	 *  - 1 pung de dragon rouge
 	 */
 	public boolean test4MainDeCorail(){
@@ -604,8 +604,8 @@ public class Jeu {
 	}
 	/**
 	 * Test le Mahjong special "Les Paires de Shozum":
-	 * 	- 6 paires de chaque série
-	 *  - 1 paire du dragon associé à la série
+	 * 	- 6 paires de chaque sï¿½rie
+	 *  - 1 paire du dragon associï¿½ ï¿½ la sï¿½rie
 	 */
 	public boolean test6PairesDeShozum(){
 		boolean result = false;
@@ -626,7 +626,7 @@ public class Jeu {
 	}
 	/**
 	 * Test le Mahjong special "Les 13 Lanternes Merveilleuses":
-	 * 	- Les 1 et les 9 des 3 séries 
+	 * 	- Les 1 et les 9 des 3 sï¿½ries 
 	 *  - Les 4 vents et 3 dragons
 	 *  - 1 Honneur
 	 */
@@ -660,14 +660,14 @@ public class Jeu {
 		return result;
 	}
 	/**
-	 * Test le Mahjong special "Les 7 muses du poète chinois":
+	 * Test le Mahjong special "Les 7 muses du poï¿½te chinois":
 	 * 	- 7 paires d'honneurs ou majeur 
 	 */
 	public boolean test8MusesDuPoeteChinois(){
 		boolean result = true;
 
 		if(this.getNbFigure(Main.typeFig.PAIRE, true)==7)	{
-			// aucune des paires ne doit être mineure
+			// aucune des paires ne doit ï¿½tre mineure
 			for(int i=2; i<8; i++){
 				if(this.getNbTuile(new Tuile(i, 'b')) >0
 						|| this.getNbTuile(new Tuile(i, 'c')) >0
@@ -695,7 +695,7 @@ public class Jeu {
 		return result;
 	}
 	/**
-	 * Test le Mahjong special "Le triangle éternel":
+	 * Test le Mahjong special "Le triangle ï¿½ternel":
 	 * 	- 4 paires de vent
 	 *  - 3 paires de dragon 
 	 */
@@ -709,7 +709,7 @@ public class Jeu {
 		return result;
 	}
 	/**
-	 * Test le Mahjong special "La tempête":
+	 * Test le Mahjong special "La tempï¿½te":
 	 * 	- 2 pung de dragons
 	 *  - 1 paire de chaque vent 
 	 */
@@ -725,7 +725,7 @@ public class Jeu {
 	/**
 	 * Test le Mahjong special "Le souffle du dragon":
 	 * 	- 3 pung de dragons 
-	 *  - 1 vents de chaque série
+	 *  - 1 vents de chaque sï¿½rie
 	 *  - 1 vent quelconque
 	 */
 	public boolean test12SouffleDuDragon(){
@@ -771,9 +771,9 @@ public class Jeu {
 	}
 	/**
 	 * Test le Mahjong special "La grande main verte":
-	 * 	- 1 pung de n°2, n°4, n°6 bambou
+	 * 	- 1 pung de nï¿½2, nï¿½4, nï¿½6 bambou
 	 *  - 1 pung de dragon vert
-	 *  - 1 paire de n°1 bambou
+	 *  - 1 paire de nï¿½1 bambou
 	 */
 	public boolean test14GrandeMainVerte(){
 		boolean result = false;
@@ -789,7 +789,7 @@ public class Jeu {
 	}
 	/**
 	 * Test le Mahjong special "La main verte et rouge":
-	 * 	- 1 pung de n°1, n°5, n°7, n°9 bambou
+	 * 	- 1 pung de nï¿½1, nï¿½5, nï¿½7, nï¿½9 bambou
 	 *  - 1 dragon vert
 	 *  - 1 dragon rouge
 	 */
@@ -808,9 +808,9 @@ public class Jeu {
 	}
 	/**
 	 * Test le Mahjong special "La petite main rouge":
-	 * 	- 1 pung de 3 caractère et 2 pung de nb pairs caractère
+	 * 	- 1 pung de 3 caractï¿½re et 2 pung de nb pairs caractï¿½re
 	 *  - 1 pung de dragon rouge
-	 *  - 1 paire de nb pair caractère
+	 *  - 1 paire de nb pair caractï¿½re
 	 */
 	public boolean test16PetiteMainRouge(){
 		boolean result = false;
@@ -831,9 +831,9 @@ public class Jeu {
 	}
 	/**
 	 * Test le Mahjong special "La grande main rouge":
-	 * 	- 1 pung de n°2, n°4, n°6 caractère
+	 * 	- 1 pung de nï¿½2, nï¿½4, nï¿½6 caractï¿½re
 	 *  - 1 pung de dragon rouge
-	 *  - 1 paire de n°1 caractère
+	 *  - 1 paire de nï¿½1 caractï¿½re
 	 */
 	public boolean test17GrandeMainRouge(){
 		boolean result = false;
@@ -849,7 +849,7 @@ public class Jeu {
 	}
 	/**
 	 * Test le Mahjong special "La main rouge et blanche":
-	 * 	- 1 pung de n°1, n°5, n°7, n°9 caractère
+	 * 	- 1 pung de nï¿½1, nï¿½5, nï¿½7, nï¿½9 caractï¿½re
 	 *  - 1 dragon rouge
 	 *  - 1 dragon blanc
 	 */
@@ -891,9 +891,9 @@ public class Jeu {
 	}
 	/**
 	 * Test le Mahjong special "La grande main blanche":
-	 * 	- 1 pung de n°2, n°4, n°6 rond
+	 * 	- 1 pung de nï¿½2, nï¿½4, nï¿½6 rond
 	 *  - 1 pung de dragon blanc
-	 *  - 1 paire de n°1 rond
+	 *  - 1 paire de nï¿½1 rond
 	 */
 	public boolean test20GrandeMainBlanche(){
 		boolean result = false;
@@ -909,7 +909,7 @@ public class Jeu {
 	}
 	/**
 	 * Test le Mahjong special "La main blanche et verte":
-	 * 	- 1 pung de n°1, n°5, n°7, n°9 rond
+	 * 	- 1 pung de nï¿½1, nï¿½5, nï¿½7, nï¿½9 rond
 	 *  - 1 dragon blanc
 	 *  - 1 dragon vert
 	 */
@@ -928,7 +928,7 @@ public class Jeu {
 	}
 	/**
 	 * Test le Mahjong special "Le mandarin":
-	 * 	- 3 kong caché de vent
+	 * 	- 3 kong cachï¿½ de vent
 	 *  - 1 paire de vent
 	 */
 	public boolean test22Mandarin(){
@@ -941,8 +941,8 @@ public class Jeu {
 		return result;
 	}
 	/**
-	 * Test le Mahjong special "Le mahjong impérial":
-	 * 	- 3 kong caché de dragon
+	 * Test le Mahjong special "Le mahjong impï¿½rial":
+	 * 	- 3 kong cachï¿½ de dragon
 	 *  - 1 paire de vent du joueur
 	 */
 	public boolean test23MahjongImperial(int ventDuJoueur){

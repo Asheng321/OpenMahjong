@@ -3,7 +3,7 @@
  *
  * Created on 17/06/2007. Copyright Raphael (synthaxerrors@gmail.com
  *
- * Classe représentant un joueur (ordi ou pas)
+ * Classe reprosentant un joueur (ordi ou pas)
  * 
  * This file is part of Open Mahjong.
  * 
@@ -29,11 +29,11 @@ public class Joueur{
 	JLabel labelCache[] = new JLabel[14];
 	JLabel labelExpose[] = new JLabel[24];
 	JLabel labelVent;
-	int tuileSelect;	//numéro de la tuile séléctionnée
+	int tuileSelect;	//numï¿½ro de la tuile sï¿½lï¿½ctionnï¿½e
 	
 	/* Partie fonctionnelle */
 	Jeu mainCache;	//main du joueur
-	Jeu mainExpose;	//combinaison exposées du joueur
+	Jeu mainExpose;	//combinaison exposï¿½es du joueur
 	
 	int vent;
 	int numero;
@@ -62,11 +62,11 @@ public class Joueur{
 	}
 
 	/**
-	 * Retourne le numéro de la figure qui est un kong caché 
+	 * Retourne le numï¿½ro de la figure qui est un kong cachï¿½ 
 	 * -1 si pas de kong
 	 */
 	public int aKong(){
-		for(int i=0; i<14; i++){								//pour chaque figure de la main cachée
+		for(int i=0; i<14; i++){								//pour chaque figure de la main cachï¿½e
 			if(mainCache.figures[i].type == Main.typeFig.KONG){		//si la figure est un kong
 				return i;
 			}
@@ -75,11 +75,11 @@ public class Joueur{
 	}
 
 	/**
-	 * Retourne le numéro de la figure qui est un kong caché 
+	 * Retourne le numï¿½ro de la figure qui est un kong cachï¿½ 
 	 * -1 si pas de kong
 	 */
 	public int aPung(){
-		for(int i=0; i<14; i++){								//pour chaque figure de la main cachée
+		for(int i=0; i<14; i++){								//pour chaque figure de la main cachï¿½e
 			if(mainCache.figures[i].type == Main.typeFig.PUNG){		//si la figure est un pung
 				return i;
 			}
@@ -88,7 +88,7 @@ public class Joueur{
 	}
 
 	/**
-	 * retourne le nombre de tuile t dans le jeu du joueur  (cachées+exposé)
+	 * retourne le nombre de tuile t dans le jeu du joueur  (cachï¿½es+exposï¿½)
 	 */
 	public int getNbTuile(Tuile t){
 		return mainCache.getNbTuile(t)+mainExpose.getNbTuile(t);
@@ -103,13 +103,13 @@ public class Joueur{
 				return i;
 			}
 		}
-		return -1; //pas d'honneur trouvée
+		return -1; //pas d'honneur trouvï¿½e
 	}
 	
 	/**
 	 * Retourne TRUE si le joueur peut faire Mahjong
 	 * Pour faire mahjong, il faut avoir 4 combinaison et une paire
-	 * Une autre façon est 3 kong cachés non exposés et une paire
+	 * Une autre faï¿½on est 3 kong cachï¿½s non exposï¿½s et une paire
 	 */
 	public boolean aMahjong(){
 		int cpt=0;
@@ -167,7 +167,7 @@ public class Joueur{
 	}
 
 	/**
-	 * Petit tri à bulle des mains cachée et exposées
+	 * Petit tri ï¿½ bulle des mains cachï¿½e et exposï¿½es
 	 */
 	private void trierJeux(){
 		mainCache.triTuile();
@@ -175,7 +175,7 @@ public class Joueur{
 	}
 
 	/**
-	 * Met à jour et affiche tous les label d'un joueur 
+	 * Met ï¿½ jour et affiche tous les label d'un joueur 
 	 */
 	public void affiche(){
 		trierJeux();
@@ -188,11 +188,11 @@ public class Joueur{
 	 */
 	public void afficheMainCache(){
 		int cpt=0;
-		/* réinitialise l'affichage */
+		/* rï¿½initialise l'affichage */
 		for(int i=0; i<14; i++){
 			labelCache[i].setIcon(null);
 		}
-		/* affiche la main chachée */
+		/* affiche la main chachï¿½e */
 		for(int i=0; i<14; i++){
 			for(int j=0; j<mainCache.figures[i].nbTuile; j++){
 				
@@ -280,7 +280,7 @@ public class Joueur{
 //	};
 	/**
 	 * Ajoute la tuile t dans la mainCache du joueur
-	 * Renvoi la position de la tuile (-1 si le joueur à déjà 14 tuiles)
+	 * Renvoi la position de la tuile (-1 si le joueur ï¿½ dï¿½jï¿½ 14 tuiles)
 	 */
 	public int ajouteTuile(Tuile t){
 //		if(numero==0 && tzu<14)t = mmm[tzu++];
@@ -290,8 +290,8 @@ public class Joueur{
 	}
 
 	/**
-	 * Retire la tuile à la position absolue i de la mainCache 
-	 * Retourne la tuile retirée
+	 * Retire la tuile ï¿½ la position absolue i de la mainCache 
+	 * Retourne la tuile retirï¿½e
 	 */
 	public Tuile retireTuile(int i){
 		Tuile t = new Tuile(mainCache.retireTuile(i));
@@ -302,9 +302,9 @@ public class Joueur{
 	
 
 	/**
-	 * Permet de faire déclaré à un joueur les fleurs et les saison qu'il a dans sa mainCache
+	 * Permet de faire dï¿½clarï¿½ ï¿½ un joueur les fleurs et les saison qu'il a dans sa mainCache
 	 * Place ces fleurs et saison dans la zone de mainExpose
-	 * Renvoi true si un honneur a été déclaré
+	 * Renvoi true si un honneur a ï¿½tï¿½ dï¿½clarï¿½
 	 */
 	public boolean declareHonneur(){
 		int index =0;
@@ -313,9 +313,9 @@ public class Joueur{
 		index=aHonneur();
 		if(index>=0){
 			if(this.numero == 0){
-				Main.displayText("Vous déclarez la "+mainCache.figures[index].tuile.nom);
+				Main.displayText("Vous dï¿½clarez la "+mainCache.figures[index].tuile.nom);
 			}else{
-				Main.displayText(this.nom+"(J"+(this.numero+1)+") déclare la "+mainCache.figures[index].tuile.nom);
+				Main.displayText(this.nom+"(J"+(this.numero+1)+") dï¿½clare la "+mainCache.figures[index].tuile.nom);
 			}
 			mainExpose.ajouteFigure(mainCache.figures[index], false);
 			mainCache.retireFigure(index);
@@ -329,9 +329,9 @@ public class Joueur{
 		String message;
 		
 		if(this.numero == 0){
-			message = "Vous déclarez ";
+			message = "Vous dï¿½clarez ";
 		}else{
-			message = this.nom+"((J"+(this.numero+1)+") déclare ";
+			message = this.nom+"((J"+(this.numero+1)+") dï¿½clare ";
 		}
 		
 		if(mainCache.figures[i].nbTuile == 4){
@@ -344,16 +344,16 @@ public class Joueur{
 			message += "1 tuiles de "+mainCache.figures[i].nbTuile;
 		}
 		
-		if(estCache){ message += " caché!";}
+		if(estCache){ message += " cachï¿½!";}
 		
 		Main.displayText(message);
 		mainExpose.ajouteFigure(mainCache.figures[i], estCache);
 		mainCache.retireFigure(i);
 	}
 	/**
-	 * fonction qui permet d'ajouter une tuile de la main cachée à
-	 * un pung déjà déclaré
-	 * @return true si un nouveau kong a été déclaré
+	 * fonction qui permet d'ajouter une tuile de la main cachï¿½e ï¿½
+	 * un pung dï¿½jï¿½ dï¿½clarï¿½
+	 * @return true si un nouveau kong a ï¿½tï¿½ dï¿½clarï¿½
 	 */
 	public boolean declareKong(){
 		for(int i=0;i<mainCache.tailleMax; i++){
@@ -361,7 +361,7 @@ public class Joueur{
 				for(int j=0; j<mainExpose.tailleMax; j++){
 					if(mainExpose.figures[j].type == Main.typeFig.PUNG 
 							&& mainExpose.figures[j].nom().compareTo(mainCache.figures[i].nom())==0){
-						//System.out.print("Un nouveau kong de "+mainExpose.figures[j].nom()+"vient d'être déclaré");
+						//System.out.print("Un nouveau kong de "+mainExpose.figures[j].nom()+"vient d'ï¿½tre dï¿½clarï¿½");
 						if(this.numero == 0){
 							Main.displayText("Vous transformez un Pung de "+mainCache.figures[i].nom()+" en Kong!");
 						}else{
@@ -381,7 +381,7 @@ public class Joueur{
 
 	/**
 	 * Renvoie le nombre de points d'un joueur sans les multiplicateur
-	 * estGanant: TRUE si le joueur a gagné
+	 * estGanant: TRUE si le joueur a gagnï¿½
 	 * vent est le vent du joueur (1~4)
 	 */
 	public int valeurMains(boolean estGagnant, int vent){
@@ -413,7 +413,7 @@ public class Joueur{
 			}
 		}
 		
-		// 1 double si les 4 combinaisons sont des brelans ou carrés de tuiles majeures
+		// 1 double si les 4 combinaisons sont des brelans ou carrï¿½s de tuiles majeures
 		if(gagnant && mainCache.seulmentTuileMaj() && mainExpose.seulmentTuileMaj()){
 			result++;
 		}
